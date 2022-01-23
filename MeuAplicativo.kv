@@ -1,43 +1,63 @@
+# #:kivy 2.0.0
 # <teste>:
 <interface>
 <Botao>
+<Fatias>
 interface:
 
-    Label:
-        id: tx
-        text: '10 mb /2.5 gb'
+    # color:0.87,0.14,0.82
+    Fatias:
 
-    Label:
-        id: campovasio
-        text:''
+        id: top
+        Label:
+            id: tx
+            text: '-- / --'
 
-    Label:
-        text:'30 arquivos'
+        # Label:
+        #     id: campovasio
+        #     text:''
 
-    Label:
-        id: campovasio
-        text:''
+        Label:
+            text: '--'
 
-    Botao:
-        text: "gg"
-        on_press: root.click()
-        on_press: self.printar_batata()
+    Fatias:
 
-    Label:
-        id: campovasio
-        text:''
+        id: mid
+        padding: 10, 1, 10, 1
+        pos_hint: {'center_y': 0.5}
+        size_hint: 0.5 , None
 
-    Label:
-        id: campovasio
-        text:''
+        Botao:
+            canvas.before:
+                Color:
+                    rgba: 0.25098039215686274, 0.0, 0.30196078431372547, 2
 
-    Label:
-        id: apps_e_peso
-        text:'<@>you tube kkkk'
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
-    Label:
-        id: campovasio
-        text:''
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+
+            text: "CLEAR"
+            on_press: root.click()
+    
+    Fatias:
+
+        id: bot
+
+        Label:
+            id: campovasio
+            text:''
+
+        Label:
+            id: apps_e_peso
+            text:'1'
+
+        Label:
+            id: campovasio
+            text:''
 
 # <teste>:
 #     Button:
